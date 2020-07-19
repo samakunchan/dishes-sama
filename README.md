@@ -2,26 +2,23 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.6.
 
-## Development server
+### What is it?
+This is an app for list, add, edit and delete dishes.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Installation
 
-## Code scaffolding
+    git clone https://github.com/samakunchan/dishes-sama.git
+---------------------
+    npm install
+    
+### Test
+I removed Jasmine and Karma for Jest. You still need to run the same command, and it will be good
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+    ng test
 
-## Build
+A coverage report will be automatically generated.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Build
 
-## Running unit tests
+    ng build --prod
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
