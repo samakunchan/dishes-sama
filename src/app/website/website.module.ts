@@ -22,22 +22,14 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        loadChildren: () =>
-          import('./front/front.module').then((m) => m.FrontModule),
+        loadChildren: () => import('./front/front.module').then((m) => m.FrontModule),
       },
     ],
   },
 ];
 
 @NgModule({
-  declarations: [
-    RecipesComponent,
-    RecipeComponent,
-    HeaderComponent,
-    CookersComponent,
-    AboutComponent,
-    WebsiteComponent,
-  ],
+  declarations: [RecipesComponent, RecipeComponent, HeaderComponent, CookersComponent, AboutComponent, WebsiteComponent],
   imports: [
     CommonModule,
     RouterModule,
