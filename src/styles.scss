@@ -1,4 +1,99 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'assets/variable';
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  background-color: $bg-color;
+  ::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
+// HEADER
+mat-sidenav-container {
+  max-width: 1220px;
+  margin: 0 auto;
+  .mat-sidenav {
+    min-width: 230px;
+    background-color: #ff81b2;
+    &__header {
+      background-color: white;
+      &--menu-button {
+        float: right;
+        color: #ff4b83;
+      }
+      &--img-container {
+        text-align: center;
+      }
+    }
+    &__link {
+      color: white !important;
+      &--text {
+        margin-left: 15px;
+      }
+    }
+  }
+}
+
+.banner {
+  text-align: center;
+  background-color: $color-light;
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+.sub-banner {
+  text-align: center;
+  background-color: $color-light;
+  &__sub-banner {
+    height: 55px;
+    background-color: $color-primary;
+  }
+}
+.elevation {
+  box-shadow: 0 2px 8px -5px black;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: center;
+  @media (max-width: 768px) {
+    justify-content: space-between;
+  }
+  &__title {
+    display: none;
+    color: #ff81b2;
+    font-weight: 400;
+    @media (max-width: 768px) {
+      display: block;
+    }
+  }
+  .menu-button {
+    display: none;
+    color: #ff81b2;
+    @media (max-width: 768px) {
+      display: block;
+    }
+  }
+  &__flex-spacer {
+    @media (max-width: 768px) {
+      -webkit-box-flex: 1;
+      flex-grow: 1;
+    }
+  }
+  &__nav-link {
+    padding: 0.5rem 1rem;
+    color: $color-primary;
+    text-decoration: none;
+    font-weight: 400;
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+}
+// END HEADER
