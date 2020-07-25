@@ -12,7 +12,8 @@
     "importHelpers": true,
     "target": "es2015",
     "lib": ["es2018", "dom"],
-    "types": ["jest"]
+    "types": ["jest"],
+    "esModuleInterop": true // A retenir pour Jest. Cela enleve des érreurs dans la console pour le coverage
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
