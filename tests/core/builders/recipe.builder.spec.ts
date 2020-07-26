@@ -16,18 +16,21 @@ describe('Recipe builder', () => {
   });
 
   it('should return a numeric uuid', () => {
+    expect(recipeBuilder.withTitle('Un chien')).toEqual({ title: 'Un chien' });
+  });
+  it('should return a numeric uuid', () => {
     expect(recipeBuilder.withUid(1)).toEqual({ uid: 1 });
   });
-  it('should return a string title', () => {
+  it('should return a string url', () => {
     expect(recipeBuilder.withImgUrl('http://placehold.it/300x300')).toEqual({ imgUrl: 'http://placehold.it/300x300' });
   });
-  it('should return a string title', () => {
+  it('should return a string slug', () => {
     expect(recipeBuilder.withSlug('un-plat')).toEqual({ slug: 'un-plat' });
   });
-  it('should return a string title', () => {
+  it('should return a string author', () => {
     expect(recipeBuilder.withAuthor('Samakunchan')).toEqual({ author: 'Samakunchan' });
   });
-  it('should return a string title', () => {
+  it('should return a string date', () => {
     expect(recipeBuilder.withDate('25-07-2020')).toEqual({ date: '25-07-2020' });
   });
   it('should return a list of ingredients', () => {
