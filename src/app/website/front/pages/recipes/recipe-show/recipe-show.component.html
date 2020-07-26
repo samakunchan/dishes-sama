@@ -1,0 +1,38 @@
+<ng-container *ngIf="recipe$ | async as recipe; else loading">
+  <header class="header-recipe">
+    <div class="header-recipe__block">
+      <div
+        [ngStyle]="{ 'background-image': 'url(' + recipe.getImgUrl + ')' }"
+        class="header-recipe__block--bg"
+      ></div>
+      <div class="header-recipe__block--blk-img">
+        <img src="{{ recipe.getImgUrl }}" alt="Image" class="round-img" />
+        <h3 class="h3-title">
+          {{ recipe.getTitle }}
+        </h3>
+      </div>
+    </div>
+  </header>
+  <div class="show-container">
+    <section class="show-container__block bg-light-color">
+      <h2>Ingredients</h2>
+      <section class="show-container__block--section">
+        <p *ngFor="let ingredient of recipe.getIngredients">
+          <mat-checkbox>{{ ingredient.getTitle }}</mat-checkbox>
+        </p>
+      </section>
+    </section>
+    <section class="show-container__block">
+      <h2>Directions</h2>
+      <p>Mettre le slider du P3 ici.</p>
+      <div *ngFor="let step of recipe.getSteps; let i = index">
+        <p>
+          <strong>Etape: {{ i + 1 }}</strong>: {{ step.getDescription }}
+        </p>
+      </div>
+    </section>
+  </div>
+</ng-container>
+<ng-template #loading>
+  loading...
+</ng-template>

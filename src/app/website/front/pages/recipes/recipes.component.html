@@ -1,0 +1,5 @@
+<section class="recipes-container">
+  <ng-container *ngFor="let item of recipes$ | async; let i = index">
+    <dish-recipe-list [recipe]="item" [index]="i"></dish-recipe-list>
+  </ng-container>
+</section>
