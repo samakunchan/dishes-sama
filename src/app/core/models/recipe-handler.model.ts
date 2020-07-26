@@ -4,5 +4,7 @@ import { Observable } from 'rxjs';
 export interface RecipeHandler {
   all(): Observable<Recipe[]>;
 
-  get(uid: number): Observable<Recipe>;
+  get(slug: string): Observable<Recipe>;
+
+  emitRecipe?(recipe: Recipe);
 }

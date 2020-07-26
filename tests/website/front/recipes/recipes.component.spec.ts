@@ -1,67 +1,57 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RecipesComponent } from '../../../../src/app/website/front/pages/recipes/recipes.component';
-import { Recipe } from '../../../../src/app/core/models/recipe.model';
-import { RecipeHandler } from '../../../../src/app/core/models/recipe-handler.model';
-import { RecipeService } from '../../../../src/app/core/services/recipe.service';
-import { RecipeBuilder } from '../../../../src/app/core/builders/recipe.builder';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { RecipeService } from '../../../../src/app/core/services/recipe.service';
+import { of } from 'rxjs';
+import { RecipeBuilder } from '../../../../src/app/core/builders/recipe.builder';
 
 describe('Recipes Component', () => {
   let fixture: ComponentFixture<RecipesComponent>;
-  let recipes: RecipesComponent;
+  let component: RecipesComponent;
+  let service: RecipeService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [RecipesComponent],
+      providers: [RecipeService],
       schemas: [NO_ERRORS_SCHEMA],
     });
     fixture = TestBed.createComponent(RecipesComponent);
-    recipes = fixture.debugElement.componentInstance;
+    service = TestBed.inject(RecipeService);
+    component = fixture.debugElement.componentInstance;
   });
 
   it('should be created', () => {
-    expect(recipes).toBeTruthy();
+    expect(component).toBeTruthy();
   });
 
-  describe('A list of recipes', () => {
-    it('should return 0 when we dont have recipes', (done) => {
-      const recipeSource: RecipeHandler = new RecipeService([]);
-      recipeSource.all().subscribe((recipe) => {
-        expect(recipe).toEqual([]);
-        done();
-      });
-    });
-
-    it('should return 1 when we have 1 recipe', (done) => {
-      const unplat: Recipe = new RecipeBuilder().withUid(1).withTitle('Un plat').withAuthor('Samakunchan').build();
-      const recipeSource: RecipeHandler = new RecipeService([unplat]);
-      recipeSource.all().subscribe((recipe) => {
-        expect(recipe).toEqual([unplat]);
-        expect(recipe.length).toEqual([unplat].length);
-        done();
-      });
-    });
-
-    it('should return 2 when we have 2 recipes', (done) => {
-      const unplat: Recipe = new RecipeBuilder().withUid(1).withTitle('Un plat').withAuthor('Samakunchan').build();
-      const unautreplat: Recipe = new RecipeBuilder().withUid(2).withTitle('Un autre plate').withAuthor('Samakunchan').build();
-      const recipeSource: RecipeHandler = new RecipeService([unplat, unautreplat]);
-      recipeSource.all().subscribe((recipe: Recipe[]) => {
-        expect(recipe).toEqual([unplat, unautreplat]);
-        expect(recipe.length).toEqual([unplat, unautreplat].length);
-        done();
-      });
+  it('should be ready to return a list 0 of recipes', (done) => {
+    spyOn(service, 'all').and.returnValue(of([]));
+    component.listRecipes().subscribe((list) => {
+      expect(list.length).toEqual(0);
+      expect(list).toEqual([]);
+      done();
     });
   });
 
-  describe('And a detail of one recipe', () => {
-    it('should show 1 recipe', (done) => {
-      const unplat: Recipe = new RecipeBuilder().withUid(1).withTitle('Un plat').withAuthor('Samakunchan').build();
-      const recipeSource: RecipeHandler = new RecipeService([unplat]);
-      recipeSource.get(1).subscribe((recipe: Recipe) => {
-        expect(recipe.getTitle).toEqual('Un plat');
-        done();
-      });
+  it('should be ready to return a list 1 of recipes', (done) => {
+    const firstRecipe = new RecipeBuilder().build();
+    spyOn(service, 'all').and.returnValue(of([firstRecipe]));
+    component.listRecipes().subscribe((list) => {
+      expect(list.length).toEqual(1);
+      expect(list).toEqual([firstRecipe]);
+      done();
+    });
+  });
+
+  it('should be ready to return a list 2 of recipes', (done) => {
+    const firstRecipe = new RecipeBuilder().build();
+    const secondRecipe = new RecipeBuilder().build();
+    spyOn(service, 'all').and.returnValue(of([firstRecipe, secondRecipe]));
+    component.listRecipes().subscribe((list) => {
+      expect(list.length).toEqual(2);
+      expect(list).toEqual([firstRecipe, secondRecipe]);
+      done();
     });
   });
 });

@@ -1,26 +1,27 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { BehaviorSubject, Observable, of, Subject } from 'rxjs';
 import { Recipe } from '../models/recipe.model';
 import { map } from 'rxjs/operators';
+import { recipeDatas } from '../fakedata/recipe-datas';
 
 @Injectable({
   providedIn: 'root',
 })
 export class RecipeService {
-  private recipeSubject$: Subject<Recipe[]> = new BehaviorSubject(this.source);
+  private recipeSubject$: Subject<Recipe> = new BehaviorSubject(null);
   recipe$ = this.recipeSubject$.asObservable();
 
-  constructor(private source: Recipe[]) {}
+  constructor() {}
 
   all(): Observable<Recipe[]> {
-    return this.recipe$;
+    return of(recipeDatas);
   }
 
-  get(uid: number): Observable<Recipe> {
-    return this.recipe$.pipe(map((recipes) => recipes.filter((recipe: Recipe) => recipe.getUid === uid)[0]));
+  get(slug: string): Observable<Recipe> {
+    return of(recipeDatas).pipe(map((recipes) => recipes.filter((recipe) => recipe.getSlug === slug)[0]));
   }
 
   emitRecipe(recipe: Recipe) {
-    this.recipeSubject$.next([recipe]);
+    this.recipeSubject$.next(recipe);
   }
 }

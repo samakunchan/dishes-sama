@@ -5,6 +5,7 @@ export class RecipeBuilder {
   protected title: string;
   protected imgUrl: string;
   protected slug: string;
+  protected description: string;
   protected ingredients: Ingredient[];
   protected steps: Step[];
   protected author: string;
@@ -22,6 +23,11 @@ export class RecipeBuilder {
 
   withImgUrl(value: string): RecipeBuilder {
     this.imgUrl = value;
+    return this;
+  }
+
+  withDescription(value: string): RecipeBuilder {
+    this.description = value;
     return this;
   }
 
@@ -51,6 +57,6 @@ export class RecipeBuilder {
   }
 
   build(): Recipe {
-    return new Recipe(this.uid, this.title, this.imgUrl, this.slug, this.author, this.date, this.ingredients, this.steps);
+    return new Recipe(this.uid, this.title, this.imgUrl, this.slug, this.description, this.author, this.date, this.ingredients, this.steps);
   }
 }

@@ -1,15 +1,19 @@
 export class Ingredient {
   constructor(private uid: number, private title: string) {}
-  clear() {
-    this.uid = undefined;
-    this.title = '';
+  get getUid(): number {
+    return this.uid;
+  }
+  get getTitle(): string {
+    return this.title;
   }
 }
 export class Step {
   constructor(private uid: number, private description: string) {}
-  clear() {
-    this.uid = undefined;
-    this.description = '';
+  get getUid(): number {
+    return this.uid;
+  }
+  get getDescription(): string {
+    return this.description;
   }
 }
 export class Recipe {
@@ -18,6 +22,7 @@ export class Recipe {
     private title: string,
     private imgUrl: string,
     private slug: string,
+    private description: string,
     private author: string,
     private date: string,
     private ingredients?: Ingredient[],
@@ -38,6 +43,10 @@ export class Recipe {
 
   get getSlug(): string {
     return this.slug;
+  }
+
+  get getDescription(): string {
+    return this.description;
   }
 
   get getIngredients(): Ingredient[] {
