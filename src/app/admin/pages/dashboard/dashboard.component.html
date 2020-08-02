@@ -1,0 +1,36 @@
+<ng-container>
+  <dish-header-admin></dish-header-admin>
+  <header>
+    <div style="position: relative; overflow: hidden;">
+      <div
+        style="background-image: url('http://placehold.it/350x100'); height: 300px; background-repeat: no-repeat; background-size: cover;"
+      ></div>
+      <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 260px; text-align: center;">
+        <button mat-button style="background-color: #c70057; color: white;">
+          Add image
+        </button>
+        <input matInput placeholder="add title..." />
+      </div>
+    </div>
+  </header>
+  <div style="display: flex;">
+    <section style="padding: 35px;">
+      <div style="display: flex; align-items: baseline;">
+        <h2>Ingredients</h2>
+        <button mat-button><mat-icon>add_box</mat-icon></button>
+      </div>
+      <section style="padding-left: 25px;">
+        <p>
+          <mat-checkbox class="example-margin">4 cups heavy cream</mat-checkbox>
+        </p>
+      </section>
+    </section>
+    <section style="padding: 35px;">
+      <div style="display: flex; align-items: baseline;">
+        <h2>Directions</h2>
+        <button mat-button><mat-icon>add_box</mat-icon></button>
+      </div>
+      <textarea name="" id="" cols="30" rows="10"></textarea>
+    </section>
+  </div>
+</ng-container>
