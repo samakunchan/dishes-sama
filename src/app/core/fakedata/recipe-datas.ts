@@ -6,14 +6,11 @@ import { StepBuilder } from '../builders/stepBuilder';
 export const recipeDatas: Recipe[] = [
   new RecipeBuilder()
     .withUid(1)
-    .withTitle('Shiba Inu')
+    .withTitle('Grand marinier')
     .withAuthor('Samakunchan')
-    .withSlug('un-chien-1')
-    .withImgUrl('https://material.angular.io/assets/img/examples/shiba2.jpg')
-    .withDescription(
-      'The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well\n' +
-        '      with mountainous terrain, the Shiba Inu was originally bred for hunting.',
-    )
+    .withSlug('grand-marinier')
+    .withImgUrl('./assets/images/grand-marnier-ice-cream.jpg')
+    .withDescription('Easy and decadent!')
     .withDate('25-07-2020')
     .withIngredients([
       new IngredientBuilder().withUid(1).withTitle('4 cups heavy cream').build(),
@@ -59,34 +56,30 @@ export const recipeDatas: Recipe[] = [
     .build(),
   new RecipeBuilder()
     .withUid(2)
-    .withTitle('Shiba Inu')
+    .withTitle('Papoutsakia')
     .withAuthor('Samakunchan')
-    .withSlug('un-chien-2')
-    .withImgUrl('https://material.angular.io/assets/img/examples/shiba2.jpg')
+    .withSlug('papoutsakia')
+    .withImgUrl('./assets/images/papoutsakia.jpeg')
     .withDescription(
-      'The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well\n' +
-        '      with mountainous terrain, the Shiba Inu was originally bred for hunting.',
+      'A traditional Greek dish that tastes very similar to moussaka, but is much quicker to cook. Fun fact: Papoutsakia in Greek means "little shoes" and a portion usually has two. However, when cooking with large American eggplants, you will likely find that one per portion is enough.',
     )
     .withDate('25-07-2020')
     .build(),
   new RecipeBuilder()
     .withUid(3)
-    .withTitle('Shiba Inu')
+    .withTitle('Spiced lamb chops with mint-mango sauce')
     .withAuthor('Samakunchan')
-    .withSlug('un-chien-3')
-    .withImgUrl('https://material.angular.io/assets/img/examples/shiba2.jpg')
-    .withDescription(
-      'The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well\n' +
-        '      with mountainous terrain, the Shiba Inu was originally bred for hunting.',
-    )
+    .withSlug('spiced-lamb')
+    .withImgUrl('./assets/images/spiced-lamp-chop.jpg')
+    .withDescription('Delicious, refreshing, and super quick to make!')
     .withDate('25-07-2020')
     .build(),
   new RecipeBuilder()
     .withUid(4)
-    .withTitle('Shiba Inu')
+    .withTitle('Garlic mushrooms a la crème with lardons and green pepper')
     .withAuthor('Samakunchan')
-    .withSlug('un-chien-4')
-    .withImgUrl('https://material.angular.io/assets/img/examples/shiba2.jpg')
+    .withSlug('mushrooms')
+    .withImgUrl('./assets/images/garlic-mushrooms.jpg')
     .withDescription(
       'The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well\n' +
         '      with mountainous terrain, the Shiba Inu was originally bred for hunting.',
@@ -95,14 +88,11 @@ export const recipeDatas: Recipe[] = [
     .build(),
   new RecipeBuilder()
     .withUid(5)
-    .withTitle('Shiba Inu')
+    .withTitle('Sous vide Salmon Teriaki')
     .withAuthor('Samakunchan')
-    .withSlug('un-chien-5')
-    .withImgUrl('https://material.angular.io/assets/img/examples/shiba2.jpg')
-    .withDescription(
-      'The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well\n' +
-        '      with mountainous terrain, the Shiba Inu was originally bred for hunting.',
-    )
+    .withSlug('salmon-sous-vide')
+    .withImgUrl('./assets/images/salmon-sous-vide.jpg')
+    .withDescription('Tender, refreshing and very easy to make')
     .withDate('25-07-2020')
     .build(),
 ];

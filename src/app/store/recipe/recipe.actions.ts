@@ -2,9 +2,9 @@ import { Action } from '@ngrx/store';
 import { Recipe } from '../../core/models/recipe.model';
 
 export enum RecipeActionTypes {
-  LoadRecipes = '[Recipe] Load Recipes',
-  LoadRecipesSuccess = '[Recipe] Load Recipes Success',
-  LoadRecipesFailure = '[Recipe] Load Recipes Failure',
+  LoadRecipes = '[Recipe Init] Load Recipes',
+  LoadRecipesSuccess = '[Recipe Effect] Load Recipes Success',
+  LoadRecipesFailure = '[Recipe Effect] Load Recipes Failure',
 }
 
 export class LoadRecipes implements Action {

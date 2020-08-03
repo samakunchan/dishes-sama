@@ -13,6 +13,7 @@ export class RecipeEffects implements OnInitEffects {
     ofType<LoadRecipes>(RecipeActionTypes.LoadRecipes),
     switchMap(() => this.recipeService.all().pipe(map((recipes: Recipe[]) => new LoadRecipesSuccess({ recipes })))),
   );
+
   constructor(private actions$: Actions, private recipeService: RecipeService) {}
 
   ngrxOnInitEffects(): Action {

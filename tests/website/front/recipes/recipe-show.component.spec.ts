@@ -7,6 +7,7 @@ import { RecipeShowComponent } from '../../../../src/app/website/front/pages/rec
 import { ActivatedRoute } from '@angular/router';
 import { ActivatedRouteStub } from '../../../stubs/activated-route-stub';
 import { of } from 'rxjs';
+import {StoreModule} from '@ngrx/store';
 
 describe('Recipe Show Component', () => {
   let fixture: ComponentFixture<RecipeShowComponent>;
@@ -17,6 +18,7 @@ describe('Recipe Show Component', () => {
     TestBed.configureTestingModule({
       declarations: [RecipeShowComponent],
       providers: [{ provide: ActivatedRoute, useClass: ActivatedRouteStub }],
+      imports: [StoreModule.forRoot({})],
       schemas: [NO_ERRORS_SCHEMA],
     });
     fixture = TestBed.createComponent(RecipeShowComponent);
