@@ -4,6 +4,7 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { RecipeService } from '../../../../src/app/core/services/recipe.service';
 import { of } from 'rxjs';
 import { RecipeBuilder } from '../../../../src/app/core/builders/recipe.builder';
+import { StoreModule } from '@ngrx/store';
 
 describe('Recipes Component', () => {
   let fixture: ComponentFixture<RecipesComponent>;
@@ -14,6 +15,7 @@ describe('Recipes Component', () => {
     TestBed.configureTestingModule({
       declarations: [RecipesComponent],
       providers: [RecipeService],
+      imports: [StoreModule.forRoot({})],
       schemas: [NO_ERRORS_SCHEMA],
     });
     fixture = TestBed.createComponent(RecipesComponent);

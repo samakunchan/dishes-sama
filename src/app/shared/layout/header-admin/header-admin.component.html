@@ -1,0 +1,49 @@
+<mat-sidenav class="mat-sidenav" #start>
+  <div class="mat-sidenav__header">
+    <button class="mat-sidenav__header--menu-button" mat-icon-button (click)="start.close()">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <div class="mat-sidenav__header--img-container">
+      <img src="https://samakunchan-technology.com/uploads/images/dishessamalogo-5f13f18545f06.webp" alt="Dishes-sama logo" />
+    </div>
+  </div>
+  <mat-nav-list (click)="start.close()">
+    <a class="mat-sidenav__link" mat-list-item routerLink="">
+      <mat-icon class="icon">home</mat-icon>
+      <span class="mat-sidenav__link--text">Recipes</span>
+    </a>
+    <a class="mat-sidenav__link" mat-list-item routerLink="cookers">
+      <mat-icon class="icon">info</mat-icon>
+      <span class="mat-sidenav__link--text">Cheeses</span>
+    </a>
+    <a class="mat-sidenav__link" mat-list-item routerLink="cookers">
+      <mat-icon class="icon">info</mat-icon>
+      <span class="mat-sidenav__link--text">Cookers</span>
+    </a>
+    <a class="mat-sidenav__link" mat-list-item routerLink="about">
+      <mat-icon class="icon">info</mat-icon>
+      <span class="mat-sidenav__link--text">About</span>
+    </a>
+    <a class="mat-sidenav__link" mat-list-item routerLink="dashboard">
+      <mat-icon class="icon">info</mat-icon>
+      <span class="mat-sidenav__link--text">Dashboard</span>
+    </a>
+  </mat-nav-list>
+</mat-sidenav>
+<mat-toolbar class="elevation toolbar">
+  <button class="menu-button" mat-icon-button (click)="start.open('mouse')">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <span class="toolbar__title">Dishes Sama</span>
+  <a mat-list-item routerLink="../" class="toolbar__nav-link">Recipes</a>
+  <a mat-list-item routerLink="../cookers" class="toolbar__nav-link">Cookers</a>
+  <a mat-list-item routerLink="../about" class="toolbar__nav-link">About</a>
+  <a mat-list-item routerLink="../dashboard" class="toolbar__nav-link">dashboard</a>
+  <a mat-icon-button href="https://github.com/samakunchan/dishes-sama" target="_blank" class="toolbar__nav-link">
+    <mat-icon>code</mat-icon>
+  </a>
+</mat-toolbar>
+<div class="sub-banner">
+  <div class="sub-banner__sub-banner"></div>
+</div>
