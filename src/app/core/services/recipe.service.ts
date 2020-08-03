@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, of, Subject } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Recipe } from '../models/recipe.model';
 import { map } from 'rxjs/operators';
 import { recipeDatas } from '../fakedata/recipe-datas';
@@ -8,9 +8,6 @@ import { recipeDatas } from '../fakedata/recipe-datas';
   providedIn: 'root',
 })
 export class RecipeService {
-  private recipeSubject$: Subject<Recipe> = new BehaviorSubject(null);
-  recipe$ = this.recipeSubject$.asObservable();
-
   constructor() {}
 
   all(): Observable<Recipe[]> {
@@ -21,7 +18,6 @@ export class RecipeService {
     return of(recipeDatas).pipe(map((recipes) => recipes.filter((recipe) => recipe.getSlug === slug)[0]));
   }
 
-  emitRecipe(recipe: Recipe) {
-    this.recipeSubject$.next(recipe);
-  }
+  edit(id: number) {}
+  delete(id: number) {}
 }

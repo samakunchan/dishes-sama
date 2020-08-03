@@ -10,6 +10,8 @@ import { HeaderAdminComponent } from '../shared/layout/header-admin/header-admin
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
+import { EffectsModule } from '@ngrx/effects';
+import { RecipeEffects } from '../store/recipe/recipe.effects';
 
 const routes: Routes = [{ path: '', component: DashboardComponent }];
 
@@ -25,6 +27,7 @@ const routes: Routes = [{ path: '', component: DashboardComponent }];
     MatSidenavModule,
     MatToolbarModule,
     MatListModule,
+    EffectsModule.forFeature([RecipeEffects]),
   ],
 })
 export class AdminModule {}

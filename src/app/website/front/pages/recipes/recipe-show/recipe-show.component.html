@@ -1,10 +1,7 @@
 <ng-container *ngIf="recipe$ | async as recipe; else loading">
   <header class="header-recipe">
     <div class="header-recipe__block">
-      <div
-        [ngStyle]="{ 'background-image': 'url(' + recipe.getImgUrl + ')' }"
-        class="header-recipe__block--bg"
-      ></div>
+      <div [ngStyle]="{ 'background-image': 'url(' + recipe.getImgUrl + ')' }" class="header-recipe__block--bg"></div>
       <div class="header-recipe__block--blk-img">
         <img src="{{ recipe.getImgUrl }}" alt="Image" class="round-img" />
         <h3 class="h3-title">
@@ -27,7 +24,8 @@
       <p>Mettre le slider du P3 ici.</p>
       <div *ngFor="let step of recipe.getSteps; let i = index">
         <p>
-          <strong>Etape: {{ i + 1 }}</strong>: {{ step.getDescription }}
+          <strong>Etape: {{ i + 1 }}</strong
+          >: {{ step.getDescription }}
         </p>
       </div>
     </section>
